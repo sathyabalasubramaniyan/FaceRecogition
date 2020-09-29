@@ -25,18 +25,23 @@ Fisherfaces face recognizer
   It creates one histogram for each image  and stores them for recognition   
   LBP faces are not affected by changes in light conditions
 IMPLEMENTATION:
- 1.Import Required Modules:
+    1.Import Required Modules:
+    
      import cv2: is OpenCV module for Python which we will use for face detection and face recognition.
      import os: We will use this Python module to read our training directories and file names.
      import numpy: We will use this module to convert Python lists to numpy arrays as OpenCV face recognizers accept numpy arrays
- 2.Preparing Data:
-      Multiple images were trained  and a dataset was created with the web cam itself and an ID was assigned to each user.Here ,I have used images of few of my favorite characters in THE VAMPIRE DIARIES(TVD) and trained them
- 3.Labelling the prepared data
-   OpenCV face recognizer accepts information in a particular format. In fact, it receives two vectors:
+     
+  2.Preparing Data:
+     
+     Multiple images were trained  and a dataset was created with the web cam itself and an ID was assigned to each user.Here ,I have used images of few of my favorite characters in THE VAMPIRE DIARIES(TVD) and trained them
+  3.Labelling the prepared data
+     
+     OpenCV face recognizer accepts information in a particular format. In fact, it receives two vectors:
       One is the faces of all the people.
       The second is the integer labels for each face.
  4.Training the prepared data:
-     Creating LBPH model and training it with the prepared data
+      
+      Creating LBPH model and training it with the prepared data
        model = cv2.face.createLBPHFaceRecognizer()
        model.train(faces, np.array(labels))
   5.Testing the model:
